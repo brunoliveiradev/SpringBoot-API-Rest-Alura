@@ -1,7 +1,13 @@
 package com.alura.forum.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "CURSO")
 public class Curso {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String categoria;
@@ -10,7 +16,11 @@ public class Curso {
 		this.nome = nome;
 		this.categoria = categoria;
 	}
-	
+
+	public Curso() {
+
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

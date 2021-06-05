@@ -1,7 +1,12 @@
 package com.alura.forum.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "USUARIO")
 public class Usuario {
 
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String email;
@@ -25,11 +30,8 @@ public class Usuario {
 			return false;
 		Usuario other = (Usuario) obj;
 		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
+			return other.id == null;
+		} else return id.equals(other.id);
 	}
 
 	public Long getId() {
