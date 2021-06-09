@@ -2,16 +2,17 @@ package com.alura.forum.DTO;
 
 import com.alura.forum.model.Topico;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class TopicoDto {
+public class TopicoDto implements Serializable {
 
     private Long id;
     private String titulo;
     private String mensagem;
-    private LocalDateTime dataCriacao = LocalDateTime.now();
+    private LocalDateTime dataCriacao;
 
     public TopicoDto(Topico topico) {
         this.id = topico.getId();

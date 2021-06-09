@@ -1,5 +1,6 @@
 package com.alura.forum.controller;
 
+import com.alura.forum.DTO.DetalhesTopicoDto;
 import com.alura.forum.DTO.TopicoDto;
 import com.alura.forum.DTO.TopicoFormDto;
 import com.alura.forum.model.Topico;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -35,7 +37,7 @@ public class TopicosController {
     }
 
     @PostMapping
-    public ResponseEntity<TopicoDto> cadastrar(@RequestBody TopicoFormDto form, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<TopicoDto> cadastrar(@RequestBody @Valid TopicoFormDto form, UriComponentsBuilder uriBuilder) {
         Topico topico = form.converter(cursoRepository);
         topicoRepository.save(topico);
 
@@ -43,4 +45,11 @@ public class TopicosController {
 
         return ResponseEntity.created(uri).body(new TopicoDto(topico));
     }
+
+    @GetMapping("/{id}")
+    public DetalhesTopicoDto detalhar(@PathVariable("id") Long id) {
+        Topico byId = topicoRepository.getById(id);
+        return new DetalhesTopicoDto(byId);
+    }
+
 }
