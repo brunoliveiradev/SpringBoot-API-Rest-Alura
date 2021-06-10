@@ -1,4 +1,4 @@
-package com.alura.forum.DTO;
+package com.alura.forum.DTO.request;
 
 import com.alura.forum.model.Curso;
 import com.alura.forum.model.Topico;

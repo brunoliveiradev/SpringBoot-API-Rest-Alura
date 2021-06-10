@@ -1,4 +1,4 @@
-package com.alura.forum.DTO;
+package com.alura.forum.DTO.response;
 
 import com.alura.forum.model.StatusTopico;
 import com.alura.forum.model.Topico;

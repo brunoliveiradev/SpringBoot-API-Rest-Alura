@@ -1,6 +1,6 @@
 package com.alura.forum.config.validation;
 
-import com.alura.forum.DTO.ErroFormularioDto;
+import com.alura.forum.DTO.response.ErroFormularioDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;

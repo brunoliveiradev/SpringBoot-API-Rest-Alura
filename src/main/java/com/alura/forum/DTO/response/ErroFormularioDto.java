@@ -1,4 +1,4 @@
-package com.alura.forum.DTO;
+package com.alura.forum.DTO.response;
 
 public class ErroFormularioDto {
 
