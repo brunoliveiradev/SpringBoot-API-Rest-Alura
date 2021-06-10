@@ -16,9 +16,10 @@ import org.springframework.web.util.UriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "/topicos")
+@RequestMapping(value = "/topics")
 public class TopicosController {
 
     @Autowired
@@ -29,16 +30,17 @@ public class TopicosController {
 
     @GetMapping //findAll
     public List<TopicoDto> lista(String nomeCurso) {
+        List<Topico> topicos;
         if (nomeCurso == null) {
-            List<Topico> topicos = topicoRepository.findAll();
-            return TopicoDto.converter(topicos);
+            topicos = topicoRepository.findAll();
         } else {
-            List<Topico> topicos = topicoRepository.findByCursoNome(nomeCurso);
-            return TopicoDto.converter(topicos);
+            topicos = topicoRepository.findByCursoNome(nomeCurso);
         }
+        return TopicoDto.converter(topicos);
     }
 
     @PostMapping //create
+    @Transactional
     public ResponseEntity<TopicoDto> cadastrar(@RequestBody @Valid TopicoFormDto form, UriComponentsBuilder uriBuilder) {
         Topico topico = form.converter(cursoRepository);
         topicoRepository.save(topico);
@@ -49,16 +51,35 @@ public class TopicosController {
     }
 
     @GetMapping("/{id}") //findById
-    public DetalhesTopicoDto detalhar(@PathVariable("id") Long id) {
-        Topico byId = topicoRepository.getById(id);
-        return new DetalhesTopicoDto(byId);
+    public ResponseEntity<DetalhesTopicoDto> detalhar(@PathVariable("id") Long id) {
+        Optional<Topico> topico = topicoRepository.findById(id);
+        //Verifica se o valor do id existe, se sim, retorna os detalhes do tópico correspondente
+        // orElse, caso não existe, retorna status 404
+        return topico.map(value -> ResponseEntity.ok(new DetalhesTopicoDto(value)))
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}")    //update
-    @Transactional //avisa o spring que é uma transação, para commitar ao fim do método
+    @Transactional //avisa o spring que é uma transação, para realizar um commit ao fim do método
     public ResponseEntity<TopicoDto> atualizar(@PathVariable Long id, @RequestBody @Valid UpdateTopicoFormDto form ) {
-        Topico topico = form.atualizar(id, topicoRepository);
+        Optional<Topico> optional = topicoRepository.findById(id);
 
-        return ResponseEntity.ok(new TopicoDto(topico));
+        if(optional.isPresent()) {
+            Topico topico = form.atualizar(id, topicoRepository);
+            return ResponseEntity.ok(new TopicoDto(topico));
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping("/{id}") // exclusão
+    @Transactional
+    public ResponseEntity<?> remover(@PathVariable Long id) {
+        Optional<Topico> optional = topicoRepository.findById(id);
+
+        if (optional.isPresent()) {
+            topicoRepository.deleteById(id);
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.notFound().build();
     }
 }
