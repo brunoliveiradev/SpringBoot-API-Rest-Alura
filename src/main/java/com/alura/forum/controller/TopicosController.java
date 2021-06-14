@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "/topics")
+@RequestMapping(value = "/api/v1/topicos")
 public class TopicosController {
 
     @Autowired
@@ -45,7 +45,7 @@ public class TopicosController {
         Topico topico = form.converter(cursoRepository);
         topicoRepository.save(topico);
 
-        URI uri = uriBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
+        URI uri = uriBuilder.path("/{id}").buildAndExpand(topico.getId()).toUri();
 
         return ResponseEntity.created(uri).body(new TopicoDto(topico));
     }
