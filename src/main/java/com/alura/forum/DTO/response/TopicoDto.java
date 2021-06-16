@@ -1,6 +1,7 @@
 package com.alura.forum.DTO.response;
 
 import com.alura.forum.model.Topico;
+import org.springframework.data.domain.Page;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -21,11 +22,9 @@ public class TopicoDto implements Serializable {
         this.dataCriacao = topico.getDataCriacao();
     }
 
-    //Transformando listas de Topico para lista de TopicoDTO
-    public static List<TopicoDto> converter(List<Topico> topicos) {
-        return topicos.stream()
-                .map(TopicoDto::new) // chama o construtor que recebe o proprio topico como parametro
-                .collect(Collectors.toList());
+    //Transformando page de Topico para 'page' de TopicoDTO
+    public static Page<TopicoDto> converter(Page<Topico> topicos) {
+        return topicos.map(TopicoDto::new); // chama o construtor que recebe o proprio topico como parametro
     }
 
     public Long getId() {

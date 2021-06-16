@@ -1,13 +1,17 @@
 package com.alura.forum.controller;
 
-import com.alura.forum.DTO.response.DetalhesTopicoDto;
-import com.alura.forum.DTO.response.TopicoDto;
 import com.alura.forum.DTO.request.TopicoFormDto;
 import com.alura.forum.DTO.request.UpdateTopicoFormDto;
+import com.alura.forum.DTO.response.DetalhesTopicoDto;
+import com.alura.forum.DTO.response.TopicoDto;
 import com.alura.forum.model.Topico;
 import com.alura.forum.repository.CursoRepository;
 import com.alura.forum.repository.TopicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +19,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -29,12 +32,17 @@ public class TopicosController {
     private CursoRepository cursoRepository;
 
     @GetMapping //findAll
-    public List<TopicoDto> lista(String nomeCurso) {
-        List<Topico> topicos;
+    public Page<TopicoDto> lista(@RequestParam(required = false) String nomeCurso,
+                                 @PageableDefault(page = 0, size = 10, sort = "id",
+                                         direction = Sort.Direction.DESC) Pageable paginacao) {
+
+//        Pageable paginacao = PageRequest.of(pagina, qtd, Sort.Direction.ASC, orderBy);
+
+        Page<Topico> topicos;
         if (nomeCurso == null) {
-            topicos = topicoRepository.findAll();
+            topicos = topicoRepository.findAll(paginacao);
         } else {
-            topicos = topicoRepository.findByCursoNome(nomeCurso);
+            topicos = topicoRepository.findByCursoNome(nomeCurso, paginacao);
         }
         return TopicoDto.converter(topicos);
     }
