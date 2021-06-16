@@ -70,7 +70,7 @@ Esses códigos foram desenvolvidos com as seguintes tecnologias:
 
 :coffee: ​Nossa API está completamente funcional, sendo acessada [localmente](http://localhost:8080/api/v1). Porém, ela ainda não está perfeita, tem coisas faltando, como, por exemplo, segurança. No momento, nossa API é pública. Qualquer pessoa que souber o endereço da API pode acessar, pode listar, cadastrar, excluir todos os tópicos do sistema. Estas implementações serão a V2 da API.
 
-📫 Espero que goste, qualquer dúvida ou sugestão me encontro a disposição! [LinkedIn](https://www.linkedin.com/in/brunooliveira13/)
+📫 Espero que goste, qualquer dúvida ou sugestão me encontro a disposição! [LinkedIn](https://www.linkedin.com/in/brunoliveiradev/)
 
 <br>
 
