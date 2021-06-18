@@ -1,6 +1,7 @@
 package com.alura.forum.controller;
 
 import com.alura.forum.DTO.request.LoginFormDto;
+import com.alura.forum.DTO.response.TokenDTO;
 import com.alura.forum.config.security.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class AuthenticationController {
     private TokenService tokenService;
 
     @PostMapping
-    public ResponseEntity<?> autenticar(@RequestBody @Valid LoginFormDto form) {
+    public ResponseEntity<TokenDTO> autenticar(@RequestBody @Valid LoginFormDto form) {
         //authManager recebe no seu método essa classe abaixo e foi criado o método dentro do form, para receber os dados
         UsernamePasswordAuthenticationToken dadosLogin = form.converter();
 
@@ -36,10 +37,8 @@ public class AuthenticationController {
             Authentication authentication = authManager.authenticate(dadosLogin);
             //Geração do Token pela biblioteca jjwt abstraído no service
             String token = tokenService.generateToken(authentication);
-
-            System.out.println(token);
-            return ResponseEntity.ok().build();
-
+            //  Retorna o status, o token e o tipo de autenticação que tem que ser feita. Token = Bearer.
+            return ResponseEntity.ok(new TokenDTO(token, "Bearer"));
         } catch (AuthenticationException e) {
             //caso dê erro de autenticação esta é a exception, e retornara um erro 400 - bad request
             return ResponseEntity.badRequest().build();
