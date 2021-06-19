@@ -44,5 +44,4 @@ public class AuthenticationController {
             return ResponseEntity.badRequest().build();
         }
     }
-
 }
