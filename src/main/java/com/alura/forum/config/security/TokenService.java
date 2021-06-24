@@ -39,7 +39,7 @@ public class TokenService {
         //Recebe o token, faz um parse descriptografando, baseado na key,
         // e o metodo devolve o claims, se valido, retorna o objeto, caso contrario joga uma exception
         try {
-            Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token);
+            Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token); //JWS = Json Web Signature = assinatura do token
             return true;
         } catch (Exception e) {
             return false;
