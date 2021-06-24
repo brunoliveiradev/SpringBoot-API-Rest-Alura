@@ -52,6 +52,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/api/v1/auth").permitAll()
                 //  este endpoint abaixo devolve informações sensíveis, apenas para fins de teste será permitAll
                 .antMatchers(HttpMethod.GET, "/actuator/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/actuator").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .csrf().disable()

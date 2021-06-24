@@ -34,7 +34,7 @@ public class UpdateTopicoFormDto {
     }
 
     public Topico atualizar(Long id, TopicoRepository topicoRepository) {
-        Topico topico = topicoRepository.getById(id);
+        Topico topico = topicoRepository.getOne(id);
 
         topico.setTitulo(titulo);
         topico.setMensagem(mensagem);
