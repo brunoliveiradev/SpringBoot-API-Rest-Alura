@@ -62,10 +62,12 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 // ^ Filtra autenticação via token, antes do filtro que já vêm por padrão
     }
 
-    //Configurações de recursos estáticos: arquivos csv, JavaScript, imagens, outros..z
+    //Configurações de recursos estáticos: arquivos csv, JavaScript, imagens, outros..
+    // Ficará aqui as configurações para habilitar o Swagger
     @Override
     public void configure(WebSecurity web) throws Exception {
-
+        //Endereços que o swagger chamam
+        web.ignoring().antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**");
     }
 
 }
