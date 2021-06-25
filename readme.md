@@ -60,11 +60,11 @@ Esses códigos foram desenvolvidos com as seguintes tecnologias:
 
 ⚡️ Criei resumos e anotações no Notion das partes relevantes com a minha visão de aluno. [Clique aqui para conferir.](https://www.notion.so/Spring-Framework-6c29e51bad174a849500a5ba8701615f)
 
-✨ Foi utilizado o Spring boot, um framework para Java bastante popular que pode ser utilizado tanto para a construção de aplicações web tradicionais, ou APIs REST, que são muito utilizadas no modelo de arquitetura de micro serviços.
+✨ O Spring boot é um framework para Java bastante popular que pode ser utilizado tanto para a construção de aplicações web tradicionais, ou APIs REST, que são muito utilizadas no modelo de arquitetura de micro serviços.
 
-👾 O proposito foi montar a API REST, baseada no modelo de fórum da Alura. 
+👾 O propósito foi montar a API REST, baseada no modelo de fórum da Alura. 
 - ✨ Na versão 1 da API, o foco foi construir as lógicas e endpoints para listar os tópicos que foram cadastrados, cadastrar novos tópicos, atualizar, excluir, basicamente fazer o "CRUD", testando com o Postman. 
-  - Foi a validação com Bean Validation, personalizamos as mensagens de erro com o *Controller Advice* do Spring, e o acesso ao banco de dados, usando os *Repositorys* do Spring Boot Data JPA e MySQL. 
+  - Validação com Bean Validation, personalizamos as mensagens de erro com o *Controller Advice* do Spring, e o acesso ao banco de dados, usando os *Repositorys* do Spring Boot Data JPA e MySQL. 
 - ✨ Na versão 2 da API, implementamos novos recursos:
   - Configuramos a parte de **paginação** para listar os tópicos; 
   - Utilizamos **cache** para melhorar desempenho; 
@@ -77,7 +77,7 @@ Esses códigos foram desenvolvidos com as seguintes tecnologias:
 :blue_heart: Caso queria testar localmente:
 *  ``` git clone https://github.com/brunoliveiradev/SpringBoot-API-Rest-Alura ``` 
 
-:coffee: Ainda não está totalmente pronta a API, e ficará para versão 3, a parte de profiles, testes e deploy. 
+:coffee: Há melhorias a serem feitas na API, e ficará para versão 3, por exemplo, a parte de profiles, testes automatizados e deploy. 
 
 📫 Espero que goste, qualquer dúvida ou sugestão me encontro a disposição! [LinkedIn](https://www.linkedin.com/in/brunoliveiradev/)
 
