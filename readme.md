@@ -3,9 +3,6 @@
 </h1>
 
 
-
-
-
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -33,12 +30,11 @@
 
 ## 🚀 Tecnologias
 
----
 Esses códigos foram desenvolvidos com as seguintes tecnologias:
 
 - [Java™ Platform, Standard Edition 11](https://docs.oracle.com/en/java/javase/11/docs/api/index.html)
 
-- **Spring**
+- [Spring](https://spring.io)
   - [Spring Boot](https://spring.io/projects/spring-boot), [Spring Data JPA](https://spring.io/projects/spring-data-jpa), [Spring Web](https://spring.io/projects/spring-ws#overview), [Spring Security](https://spring.io/projects/spring-security), [Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator), [Sprig Boot Validation - Javax/Bean Validation](https://docs.sprwww.baeldung.com/javax-validation).   
 
 - [JJWT - JSON Web Tokens for Java](https://java.jsonwebtoken.io)
@@ -56,13 +52,10 @@ Esses códigos foram desenvolvidos com as seguintes tecnologias:
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
   <br>
----
 
 
----
 ## 💻 Projeto
 
----
 🚀 O repositório tem como propósito compartilhar o conhecimento absorvido e os códigos desenvolvidos nos cursos [**Spring Boot API Rest: Construa uma API**](https://cursos.alura.com.br/course/spring-boot-api-rest) e [**Spring Boot API Rest: Segurança da API, Cache e Monitoramento**](https://cursos.alura.com.br/course/spring-boot-seguranca-cache-monitoramento) proporcionado pela Alura.
 
 ⚡️ Criei resumos e anotações no Notion das partes relevantes com a minha visão de aluno. [Clique aqui para conferir.](https://www.notion.so/Spring-Framework-6c29e51bad174a849500a5ba8701615f)
@@ -88,8 +81,6 @@ Esses códigos foram desenvolvidos com as seguintes tecnologias:
 
 <br>
 
----
----
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
