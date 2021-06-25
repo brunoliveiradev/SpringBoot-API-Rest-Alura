@@ -72,10 +72,11 @@ Esses códigos foram desenvolvidos com as seguintes tecnologias:
   - Utilizamos o Spring Boot Admin para fazer a parte do monitoramento;
   - Concluímos com a parte de documentação, com o **Swagger**, ele imprime todos os controllers, cada um dos endpoints, conseguimos testar por aqui também, simular todos os testes.
   
-✨ Nossa API está completamente funcional, sendo acessada localmente`http://localhost:8080/api/v2`.
-✨ E para acessar a **documentação pelo Swagger UI** temos que acessar `http://localhost:8080/api/v2/swagger-ui.html/`
+✨ Nossa API está completamente funcional, sendo por hora acessada localmente`http://localhost:8080/api/v2`.
 
-:coffee: Ainda não está totalmente pronta a API, se pensar em simular uma API de mercado, e ficará para versão 3, a parte de profiles, testes e deploy. 
+✨ Para acessar a **documentação pelo Swagger UI** temos que acessar `http://localhost:8080/api/v2/swagger-ui.html/`.
+
+:coffee: Ainda não está totalmente pronta a API, e ficará para versão 3, a parte de profiles, testes e deploy. 
 
 📫 Espero que goste, qualquer dúvida ou sugestão me encontro a disposição! [LinkedIn](https://www.linkedin.com/in/brunoliveiradev/)
 
