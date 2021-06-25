@@ -71,10 +71,12 @@ Esses códigos foram desenvolvidos com as seguintes tecnologias:
   - Implementamos o módulo de segurança e a parte da **autenticação**, utilizando ***JSON Web Token***. Todos os endpoints que precisam de autenticação temos que mandar o token do authorization no cabeçalho.
   - Utilizamos o Spring Boot Admin para fazer a parte do monitoramento;
   - Concluímos com a parte de documentação, com o **Swagger**, ele imprime todos os controllers, cada um dos endpoints, conseguimos testar por aqui também, simular todos os testes.
-  
-✨ Nossa API está completamente funcional, sendo por hora acessada localmente `http://localhost:8080/api/v2`.
+
+:blue_heart: Caso queria testar localmente `http://localhost:8080/api/v2`:
+*  ``` git clone https://github.com/brunoliveiradev/SpringBoot-API-Rest-Alura ``` 
 
 ✨ Documentação do **Swagger UI** via `http://localhost:8080/api/v2/swagger-ui.html/`.
+* No endpoint de authentication, utilize ` aluno@email.com ` e `123456` para gerar seu token.
 
 :coffee: Ainda não está totalmente pronta a API, e ficará para versão 3, a parte de profiles, testes e deploy. 
 
