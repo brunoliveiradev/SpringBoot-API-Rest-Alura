@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v1/auth")
+@RequestMapping("/auth")
 public class AuthenticationController {
 
     //Esta classe por algum motivo não vem configurada por padrão para ser injetada, precisa do @Bean no SecurityConfig

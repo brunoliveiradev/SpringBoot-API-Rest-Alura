@@ -47,9 +47,9 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers(HttpMethod.GET, "/api/v1/topicos").permitAll()
-                .antMatchers(HttpMethod.GET, "/api/v1/topicos/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/v1/auth").permitAll()
+                .antMatchers(HttpMethod.GET,  "/topicos").permitAll()
+                .antMatchers(HttpMethod.GET, "/topicos/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/auth").permitAll()
                 //  este endpoint abaixo devolve informações sensíveis, apenas para fins de teste será permitAll
                 .antMatchers(HttpMethod.GET, "/actuator/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/actuator").permitAll()

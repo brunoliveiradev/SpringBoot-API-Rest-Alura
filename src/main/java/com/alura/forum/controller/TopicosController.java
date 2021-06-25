@@ -24,7 +24,7 @@ import java.net.URI;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "/api/v1/topicos")
+@RequestMapping(value = "/topicos")
 public class TopicosController {
 
     @Autowired
