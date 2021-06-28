@@ -4,6 +4,7 @@ import com.alura.forum.DTO.request.LoginFormDto;
 import com.alura.forum.DTO.response.TokenDTO;
 import com.alura.forum.config.security.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -18,6 +19,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
+@Profile(value = {"prod", "test"})
 public class AuthenticationController {
 
     //Esta classe por algum motivo não vem configurada por padrão para ser injetada, precisa do @Bean no SecurityConfig

@@ -20,7 +20,7 @@ public class Usuario implements UserDetails {
 	private String email;
 	private String senha;
 
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	private List<Perfil> perfis = new ArrayList<>();
 
 	@Override
