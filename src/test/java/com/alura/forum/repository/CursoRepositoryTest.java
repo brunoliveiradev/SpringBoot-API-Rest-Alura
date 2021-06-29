@@ -30,10 +30,11 @@ public class CursoRepositoryTest {
     public void findByNome() {
         String nomeCurso = "HTML 5";
 
-        Curso html5 = new Curso();
-        html5.setNome(nomeCurso);
-        html5.setCategoria("Programação");
-        em.persist(html5);
+        // Se for rodar no perfil test
+//        Curso html5 = new Curso();
+//        html5.setNome(nomeCurso);
+//        html5.setCategoria("Programação");
+//        em.persist(html5);
 
         Curso curso = cursoRepository.findByNome(nomeCurso);
 
